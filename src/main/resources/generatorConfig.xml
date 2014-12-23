@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+    <classPathEntry
+            location="d:\java\jdbc\mysql-connector-java-5.1.27.jar"/>
+    <context id="context1" targetRuntime="MyBatis3">
+        <plugin type="com.shinowit.mybatis.plugin.SelectByPage4MySqlPlugin"/>
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+        <!-- 注释生成器 -->
+        <commentGenerator>
+            <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+
+        <!--
+        <jdbcConnection driverClass="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+                        connectionURL="jdbc:sqlserver://localhost:1433;databaseName=oss2014;"
+                        userId="sa" password="shinow"/>
+-->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://127.0.0.1:3306/lunwen?useUnicode=true"
+                        userId="root" password="shinow"/>
+        <!-- 类型转换器或者加类型解析器 -->
+        <!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer true，把JDBC DECIMAL 和
+            NUMERIC 类型解析为java.math.BigDecimal -->
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <javaModelGenerator targetPackage="com.shinowit.entity"
+                            targetProject="src\main\java"/>
+
+        <sqlMapGenerator targetPackage="com.shinowit.dao.mapper"
+                         targetProject="src\main\resources"/>
+
+        <javaClientGenerator targetPackage="com.shinowit.dao.mapper" targetProject="src\main\java"  type="XMLMAPPER" />
+<!--
+        <table tableName="sys_user_role"/>
+        <table tableName="sys_user">
+            <generatedKey column="user_id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="sys_role"/>
+        <table tableName="sys_role_to_menu"/>
+        <table tableName="sys_menu"/>
+        <table tableName="sys_log">
+            <generatedKey column="log_id" sqlStatement="MySql" identity="true"/>
+        </table>
+        -->
+
+        <table tableName="sys_user">
+            <generatedKey column="user_id" sqlStatement="MySql"	identity="true" />
+        </table>
+
+
+
+        <table tableName="product_type">
+        </table>
+
+
+
+        <table tableName="product_unit">
+            <generatedKey column="unit_id" sqlStatement="MySql"	identity="true" />
+        </table>
+
+
+
+        <table tableName="product_sale_status">
+            <generatedKey column="status_id" sqlStatement="MySql"	identity="true" />
+        </table>
+
+
+
+        <table tableName="web_user">
+        </table>
+
+
+
+        <table tableName="product">
+        </table>
+
+
+
+        <table tableName="out_stock">
+            <generatedKey column="out_stock_id" sqlStatement="MySql"	identity="true" />
+        </table>
+
+
+
+        <table tableName="provider">
+        </table>
+
+
+
+        <table tableName="delivery_info">
+        </table>
+
+
+
+        <table tableName="sys_role">
+        </table>
+
+
+
+        <table tableName="sys_menu">
+        </table>
+
+
+
+        <table tableName="order_info">
+            <generatedKey column="bill_code" sqlStatement="MySql"	identity="true" />
+        </table>
+
+
+
+        <table tableName="in_stock">
+            <generatedKey column="in_stock_id" sqlStatement="MySql"	identity="true" />
+        </table>
+
+
+
+        <table tableName="sys_log">
+            <generatedKey column="log_id" sqlStatement="MySql"	identity="true" />
+        </table>
+
+
+
+        <table tableName="sys_role_to_menu">
+        </table>
+
+
+
+        <table tableName="sys_user_role">
+        </table>
+
+
+
+        <table tableName="in_stock_detail">
+            <generatedKey column="in_stock_detail_id" sqlStatement="MySql"	identity="true" />
+        </table>
+
+
+
+        <table tableName="order_detail">
+            <generatedKey column="id" sqlStatement="MySql"	identity="true" />
+        </table>
+
+
+
+        <table tableName="member_supply_record">
+            <generatedKey column="id" sqlStatement="MySql"	identity="true" />
+        </table>
+
+
+
+        <table tableName="member_address">
+            <generatedKey column="id" sqlStatement="MySql"	identity="true" />
+        </table>
+
+
+
+        <table tableName="product_stock">
+        </table>
+
+
+
+        <table tableName="out_stock_detail">
+            <generatedKey column="out_stock_detail_id" sqlStatement="MySql"	identity="true" />
+        </table>
+
+    </context>
+</generatorConfiguration>
